@@ -48,12 +48,12 @@ export enum ACTION {
     RequestAuthStatus="RequestAuthStatus",
     RequestInitialState="RequestInitialState",
     RequestStatBucket="RequestStatBucket",
+    ResetServerState="ResetServerState",
     SaveObject="SaveObject",
     SetDeploymentMessage="SetDeploymentMessage",
     SetDeploymentObjectStatus="SetDeploymentObjectStatus",
     SetDeploymentObjects="SetDeploymentObjects",
     SetDeploymentStatus="SetDeploymentStatus",
-    ResetServerState="ResetServerState",
     SetInitialState="SetInitialState",
     SetMessagesDismissed="SetMessageDismissed",
     SetPage="SetPage",
@@ -551,18 +551,19 @@ export type IAction =
     | IMessageTextReqAction
     | IModifiedFilesChanged
     | IModifiedFilesList
+    | IModifiedFilesResolve
     | IModifiedFilesScan
     | IObjectChanged
     | IPokeService
     | IRequestAuthStatus
     | IRequestInitialState
     | IRequestStatBucket
+    | IResetServerState
     | ISaveObject
     | ISetDeploymentMessage
     | ISetDeploymentObjectStatus
     | ISetDeploymentObjects
     | ISetDeploymentStatus
-    | IResetServerState
     | ISetInitialState
     | ISetMessagesDismissed
     | ISetPageAction
@@ -575,4 +576,4 @@ export type IAction =
     | ISubscribeStatValues
     | IToggleDeploymentObject
     | IUpdateStatusAction
-    | IModifiedFilesResolve;
+;
