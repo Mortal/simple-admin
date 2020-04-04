@@ -57,6 +57,8 @@ export enum ACTION {
     SetInitialState="SetInitialState",
     SetMessagesDismissed="SetMessageDismissed",
     SetPage="SetPage",
+    SshSign="SshSign",
+    SshSignRes="SshSignRes",
     StartDeployment="StartDeployment",
     StartLog="StartLog",
     StatBucket="StatBucket",
@@ -513,6 +515,18 @@ export interface IModifiedFilesResolve {
     newCurrent: string | null;
 }
 
+export interface ISshSign {
+    type: ACTION.SshSign;
+    certificateAuthorityName: string;
+    userPublicKey: string;
+}
+
+export interface ISshSignRes {
+    type: ACTION.SshSignRes;
+    certificate: string | null;
+    error: string | null;
+}
+
 export type IAction =
     | IAddDeploymentLog
     | IAddLogLines
@@ -567,6 +581,7 @@ export type IAction =
     | ISetInitialState
     | ISetMessagesDismissed
     | ISetPageAction
+    | ISshSign
     | IStartDeployment
     | IStartDeployment
     | IStartLog
